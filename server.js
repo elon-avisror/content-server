@@ -4,10 +4,9 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello there!");
-  //res.json(fs.read("content.json"));
+  res.json(JSON.parse(fs.readFileSync("content.json").toString()));
 });
 
 app.listen(8000, () => {
-  console.log("server listen on port 80!");
+  console.log("server listen on port 8000!");
 });
